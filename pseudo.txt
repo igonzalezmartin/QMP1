@@ -1,0 +1,49 @@
+enum Tipo{
+  CAMISA MANGA CORTA,
+  PANTALON,
+  ZAPATOS,
+  ...
+}
+
+enum Categoria{
+  SUPERIOR,
+  INFERIOR,
+  CALZADO,
+  ACCESORIO,
+  ...
+}
+
+enum Material {
+  ALGODON,
+  ...
+}
+
+class Prenda {
+  var tipo
+  var categoria
+  var material
+  orderedList colores
+
+  constructor Prenda(tipo, categoria, material, colores) {
+      this.tipo = tipo;
+      this.categoria = categoria;
+      this.material = material;
+      this.colores = colores;
+  }
+
+  colorPrincipal() { return colores[0]; }
+  colorSecundario() { return colores[1]? colores[1] : null; }
+}
+
+class Atuendo {
+  list prendas
+
+  constructor Atuendo( prendas ) {
+      this.prendas = null;
+  }
+
+  agregarPrenda(tipo, categoria, material, colores) { 
+        if (!tipo || !cateogria || !material || colores.length < 1) return ;
+        prendas.add(new Prenda(tipo, categoria, material, colores));
+      }
+}
