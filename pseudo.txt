@@ -47,3 +47,18 @@ class Atuendo {
         prendas.add(new Prenda(tipo, categoria, material, colores));
       }
 }
+
+class Color {
+  var r
+  var g
+  var b
+  
+  constructor Color(r,g,b) {
+    this.r = r; this.g = g; this.b = b;
+  }
+
+  rgb() {return [r,g,b];}
+  r() {return r;}
+  g() {return g;}
+  b() {return b;}
+}
