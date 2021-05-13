@@ -1,0 +1,128 @@
+enum Categoria{
+  SUPERIOR,
+  INFERIOR,
+  CALZADO,
+  ACCESORIO,
+  ...
+}
+
+enum Material {
+  ALGODON,
+  ...
+}
+
+enum Trama {
+  RAYADO
+  CON_LUNARES
+  ESTAMPADOS
+  A_CUADROS
+}
+
+class TipoPrenda {
+  var categoria;
+  
+  constructor TipoPrenda(categoria){
+    this.categoria = categoria;
+  }
+
+  getCategoria(){
+    return categoria;
+  }  
+}
+
+class Color {
+  var r
+  var g
+  var b
+  
+  constructor Color(r,g,b) {
+    this.r = r; this.g = g; this.b = b;
+  }
+
+  rgb() {return [r,g,b];}
+  r() {return r;}
+  g() {return g;}
+  b() {return b;}
+}
+
+
+class Prenda {
+  var tipo
+  var material
+  orderedList colores
+
+  constructor Prenda(tipo, material, colores) {
+      this.tipo = tipo;
+      this.material = material;
+      this.colores = colores;
+  }
+
+  colorPrincipal() { return colores[0]; }
+  colorSecundario() { return colores[1]? colores[1] : null; }
+}
+
+class Atuendo {
+  list prendas
+
+  constructor Atuendo( prendas ) {
+      this.prendas = null;
+  }
+
+  agregarPrenda(tipo, categoria, material, colores) { 
+        if (!tipo || !cateogria || !material || colores.length < 1) return ;
+        prendas.add(new Prenda(tipo, categoria, material, colores));
+      }
+}
+
+class Borrador {
+  var tipo;
+  var categoria;
+  var material;
+  var colores;
+
+  constructor Borrador(){}
+
+  setTipo(tipo){ if(tipo) this.tipo = tipo; return this;}
+  setMaterial(material){ if(material) this.material = material; return this;}
+  setColores(colores){ if(colores) this.colores = colores; return this;}
+  crearPrenda() {return new Prenda(tipo, material, colores)}
+}
+
+class Uniforme inherits Prenda{
+  list prendas;
+  constructor Uniforme(parteInferior, parteSuperior, calzado){
+    prendas.add(parteInferior, parteSuperior, calzado);
+  }
+}
+
+abstract class Sastre {
+  abstract crearParteSuperior();
+  abstract crearParteInferior();
+  abstract crearCalzado();
+  crearUniforme() {
+    return new Uniforme(
+      crearParteSuperior();
+      crearParteInferior();
+      crearCalzado();
+    )    
+  }
+}
+
+//Ejemplo
+class SastreSanJuan inherits Sastre{
+  override crearParteSuperior(){
+    borrador = new Borrador(CHOMBA);
+    borrador.setColor(AZUL_OSCURO)
+            .setMaterial(Materiales.TELA);
+            .setTipo(ALGODON);
+    return borrador.crearPrenda();
+  }
+
+  override crearParteInferior(){
+    ...
+  }
+
+  override crearCalzado(){
+    ...
+  }
+}
