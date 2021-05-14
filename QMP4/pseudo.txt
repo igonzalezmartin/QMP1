@@ -112,11 +112,21 @@ abstract class Sastre {
 }
 
 class RepositorioAtuendos{
+  list atuendos;
+
   _instance
   instance(){
     if (!_instance)
       _instance = new RepositorioAtuendos();
     return _instance;
+  }
+
+  getAtuendo(sugerencia){
+    return getAteundos(sugerencia).first();
+  }
+
+  getAtuendos(sugerencia){
+    return atuendos.filter((atuendo) => sugerencia.cumple(atuendo))
   }
 }
 
