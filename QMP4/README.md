@@ -1,0 +1,2 @@
+# Correcciones
+- AccuWeatherApi es el nombre de mi implementacion, pero en el enunciado en realidad es el nombre de la API y es una interfaz porque busca mostrarme el contrato que debo respetar (la manera de comunicarme, sus metodos y la manera de usarlos). En concreto falta hacer una flecha que vaya a una Interfaz que se llame AccuWeatherApi que sea identica a la del enunciado, y cambiarle el nombre al "AccuWeatherApi" que vendria a ser mi implementacion.
