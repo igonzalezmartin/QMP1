@@ -1,0 +1,42 @@
+class Guardarropa{
+    list prendas;
+    list propuestas;
+    list propuestasAceptadas;
+
+    addPrenda(prenda){
+        prendas.add(prenda);
+    }
+
+    removePrenda(prenda){
+        prendas.remove(prenda);
+    }
+
+    addPropuesta(propuesta){
+        propuestas.add(propuesta);
+    }
+
+    removePropuesta(propuesta){
+        propuestas.remove(propuesta);
+    }
+
+    getPropuestas(){return this.propuestas}
+
+    aceptarPropuesta(propuesta){
+        if(!propuestas.contains(propuesta)) throw new PropuestaNotExists();
+        removePropuesta(propuesta);
+        propuesta.affectGuardarropa(); 
+        propuestasAceptadas.add(propuesta);
+    }
+
+    deshacerPropuesta(propuesta){
+        if(!propuestasAceptadas.contains(propuesta)) throw new PropuestaNotExists();
+        propuestasAceptadas.remove(propuesta);
+        propuesta.desafectarGuardarropa();
+        addPropuesta(propuesta);
+    }
+
+    rechazarPropuesta(propuesta){
+        if(!propuestas.contains(propuesta)) throw new PropuestaNotExists();
+        removePropuesta(propuests);
+    }
+}
