@@ -1,0 +1,16 @@
+class ClimaAccuWeather inherits ClimaApi{
+  api;
+
+  constructor ClimaApi(climaCache, maxTries){
+    super(climaCache, maxTries);
+    this.api = new AccuWeatherAPI();
+  }
+
+  override loadCache(lugar){
+    this.climaCache = apiClima.getWeather(lugar); 
+  }
+
+  override getPrecipitation(lugar){
+    return climaCache.get(0).get("PrecipitationProbability");
+  }
+}

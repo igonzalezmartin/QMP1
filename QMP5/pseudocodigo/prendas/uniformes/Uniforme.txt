@@ -1,0 +1,6 @@
+class Uniforme inherits Prenda{
+  list prendas;
+  constructor Uniforme(parteInferior, parteSuperior, calzado){
+    prendas.add(parteInferior, parteSuperior, calzado);
+  }
+}

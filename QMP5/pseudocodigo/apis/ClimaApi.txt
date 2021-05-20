@@ -1,0 +1,16 @@
+abstract class ClimaApi{
+  climaCache;
+  maxTries;
+  tries;
+
+  constructor ClimaApi(climaCache, maxTries){
+    this.climaCache = climaCache;
+    this.maxTries = maxTries;
+    this.tries = 0;
+  }
+
+  abstract loadCache(){}
+  resetTries(){this.tries = 0;}
+  abstract getTemperatura(lugar);
+  abstract getPrecipitation(lugar);
+}

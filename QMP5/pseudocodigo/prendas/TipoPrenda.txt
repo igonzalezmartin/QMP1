@@ -1,0 +1,11 @@
+class TipoPrenda {
+  var categoria;
+  
+  constructor TipoPrenda(categoria){
+    this.categoria = categoria;
+  }
+
+  getCategoria(){
+    return categoria;
+  }  
+}

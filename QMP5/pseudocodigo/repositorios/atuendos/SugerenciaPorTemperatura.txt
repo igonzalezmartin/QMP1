@@ -1,0 +1,6 @@
+class SugerenciaPorTemperatura implements Sugerencia {
+  cumple(atuendo){
+    const temperaturaActual = ClimaManager.instance().getTemperatura("Buenos Aires, Argentina");
+    return temperaturaActual == atuendo.getTemperatura();
+  }
+}

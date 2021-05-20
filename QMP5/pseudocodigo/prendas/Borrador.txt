@@ -1,0 +1,13 @@
+class Borrador {
+  var tipo;
+  var categoria;
+  var material;
+  var colores;
+
+  constructor Borrador(){}
+
+  setTipo(tipo){ if(tipo) this.tipo = tipo; return this;}
+  setMaterial(material){ if(material) this.material = material; return this;}
+  setColores(colores){ if(colores) this.colores = colores; return this;}
+  crearPrenda() {return new Prenda(tipo, material, colores)}
+}

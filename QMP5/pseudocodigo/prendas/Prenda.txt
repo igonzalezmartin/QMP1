@@ -1,0 +1,14 @@
+class Prenda {
+  var tipo
+  var material
+  orderedList colores
+
+  constructor Prenda(tipo, material, colores) {
+      this.tipo = tipo;
+      this.material = material;
+      this.colores = colores;
+  }
+
+  colorPrincipal() { return colores[0]; }
+  colorSecundario() { return colores[1]? colores[1] : null; }
+}

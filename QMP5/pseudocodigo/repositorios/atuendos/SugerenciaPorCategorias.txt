@@ -1,0 +1,9 @@
+class SugerenciaPorCategorias implements Sugerencia {
+  list categorias
+  constructor(categorias){ this.categorias = categorias;}
+  cumple(atuendo){
+    return categorias.forEach((categoria) => {
+      atuendo.getPrendas().any((prenda) => prenda.getCategoria() == categoria)
+    })
+  }
+}
