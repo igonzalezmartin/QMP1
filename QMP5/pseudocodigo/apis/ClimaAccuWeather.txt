@@ -7,7 +7,7 @@ class ClimaAccuWeather inherits ClimaApi{
   }
 
   override loadCache(lugar){
-    this.climaCache = apiClima.getWeather(lugar); 
+    this.climaCache = api.getWeather(lugar); 
   }
 
   override getPrecipitation(lugar){
