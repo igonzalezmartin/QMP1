@@ -1,0 +1,15 @@
+class Atuendo {
+  list prendas
+  var temperatura
+
+  constructor Atuendo( prendas ) {
+      this.prendas = null;
+  }
+
+  agregarPrenda(tipo, categoria, material, colores) { 
+        if (!tipo || !cateogria || !material || colores.length < 1) return ;
+        prendas.add(new Prenda(tipo, categoria, material, colores));
+      }
+  
+  getTemperatura() {return this.temperatura;}
+}

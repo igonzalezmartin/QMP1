@@ -1,0 +1,9 @@
+class SugerenciaPorTemperatura implements Sugerencia {
+  var temperaturaActual;
+  public SugerenciaPorTemperatura(temperatura){
+    this.temperaturaActual = temperatura;
+  }
+  cumple(atuendo){
+    return temperaturaActual == atuendo.getTemperatura();
+  }
+}

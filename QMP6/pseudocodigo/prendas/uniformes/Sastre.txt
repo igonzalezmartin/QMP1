@@ -1,0 +1,12 @@
+abstract class Sastre {
+  abstract crearParteSuperior();
+  abstract crearParteInferior();
+  abstract crearCalzado();
+  crearUniforme() {
+    return new Uniforme(
+      crearParteSuperior();
+      crearParteInferior();
+      crearCalzado();
+    )    
+  }
+}

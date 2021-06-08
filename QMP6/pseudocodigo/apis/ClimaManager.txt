@@ -1,0 +1,15 @@
+class ClimaManager{
+  _instance;
+  climaApi;
+
+  instance(){
+    if(!_instance)
+      this._instance = new ClimaManager();
+    return _instance;
+  }
+
+  setApi(nuevaApi){this.climaApi = nuevaApi;}
+  getTemperatura(lugar){climaApi.getTemperatura();}
+  getPrecipitation(lugar){climaApi.getPrecipitation();}
+  getAlertas(lugar){climaApi.getAlertas();}
+}
