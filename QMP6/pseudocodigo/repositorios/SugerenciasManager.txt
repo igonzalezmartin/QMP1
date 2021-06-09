@@ -25,7 +25,7 @@ class SugerenciasManager{
     return atuendosDeUsuario.filter((atuendo) => sugerenciaDiaria.cumple(atuendo))
   }
 
-  actualizarSugerencia(){
+  actualizarSugerenciaDiaria(){
     clima = ClimaManager.instance();
     alertas = clima.getAlertas();
 
@@ -34,12 +34,15 @@ class SugerenciasManager{
   }
 
   avisarSubscriptores(){
+    //Avisar Notificaciones
     if(alertas.contains("STORM"))
       subsNotificacion.forEach(sub -> NotificationService.notify("Lleva paraguas!"));
     if(alertas.contains("HAIL"))
       subsNotificacion.forEach(sub -> NotificationService.notify("No salgas en auto! Granizooo!!!"));
     
+    //Avisar Mails
     mensajeAlertas = "";
-    alertas.forEach(alerta -> mensajeAlertas += alerta);
+    alertas.forEach(alerta -> mensajeAlertas += ", " + alerta);
+    subsMail.forEach(subEmail -> MailSender.send(subEmail, mensajeAlertas));
   }
 }
