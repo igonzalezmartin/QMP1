@@ -1,9 +1,9 @@
 class PropuestaEliminar implements PropuestaGuardarropa{
-    override afectarGuardarropa(){
+    override afectarGuardarropa(guardarropa){
         guardarropa.removePrenda(prenda);
     }
 
-    override desafectarGuardarropa(){
+    override desafectarGuardarropa(guardarropa){
         guardarropa.addPrenda(prenda);
     }
 }
