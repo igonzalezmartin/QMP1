@@ -1,4 +1,17 @@
-interface PropuestaGuardarropa{
-    afectarGuardarropa();
-    desafectarGuardarropa();
+abstract class PropuestaGuardarropa{
+    var prenda;
+
+    abstract aceptar(guardarropa){
+        removePropuesta(this);
+        addPropuestaAceptada(this); //preguntar usuario si esto va
+        propuesta.afectarGuardarropa(guardarropa); 
+    }
+    abstract deshacer(guardarropa){
+        removePropuestaAceptada(propuesta); //preguntar usuario si esto va
+        addPropuesta(propuesta);
+        propuesta.desafectarGuardarropa(guardarropa);
+    }
+
+    abstract afectarGuardarropa(guardarropa);
+    abstract desafectarGuardarropa(guardarropa);
 }

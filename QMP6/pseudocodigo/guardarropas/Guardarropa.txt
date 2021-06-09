@@ -4,12 +4,10 @@ class Guardarropa{
     list propuestasAceptadas;
 
     addPrenda(prenda){
-        if(!prendas.contains(prenda)) throw new PrendaNotExists();
         prendas.add(prenda);
     }
 
     removePrenda(prenda){
-        if(!prendas.contains(prenda)) throw new PrendaNotExists();
         prendas.remove(prenda);
         propuestas.filter()
     }
@@ -22,6 +20,14 @@ class Guardarropa{
         propuestas.remove(propuesta);
     }
 
+    addPropuestaAceptada(propuesta){
+        propuestasAceptadas.add(propuesta);
+    }
+
+    removePropuestaAceptada(propuesta){
+        propuestaAceptadas.remove(propuesta);
+    }
+
     removePropuestasRelacionadasA(prenda){
         propuestas.filter(p -> p.prenda == prenda).forEach(p -> propuestas.remove(p));
         propuestasAceptadas.filter(p -> p.prenda == prenda).forEach(p -> propuestasAceptadas.remove(p));
@@ -30,14 +36,10 @@ class Guardarropa{
     getPropuestas(){return this.propuestas}
 
     aceptarPropuesta(propuesta){
-        removePropuesta(propuesta);
-        propuestasAceptadas.add(propuesta);
         propuesta.aceptar(); 
     }
 
     deshacerPropuesta(propuesta){
-        propuestasAceptadas.remove(propuesta);
-        addPropuesta(propuesta);
         propuesta.deshacer();
     }
 
