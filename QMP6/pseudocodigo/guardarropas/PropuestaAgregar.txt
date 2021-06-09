@@ -1,8 +1,8 @@
-class PropuestaAgregar inherits PropuestaGuardarropa{
-    override afectarGuardarropa(){
+class PropuestaAgregar implements PropuestaGuardarropa{
+    override aceptar(){
         guardarropa.addPrenda(prenda);
     }
-    override desafectarGuardarropa(){
+    override deshacer(){
         guardarropa.removePrenda(prenda);
     }
 }

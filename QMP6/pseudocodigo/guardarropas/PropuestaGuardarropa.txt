@@ -1,8 +1,4 @@
-abstract class PropuestaGuardarropa{
-    //Con estas variables queda implicito que la propuesta depende de un guardarropa y una prenda
-    var guardarropa;
-    var prenda;
-
-    abstract afectarGuardarropa();
-    abstract desafectarGuardarropa();
+interface PropuestaGuardarropa{
+    afectarGuardarropa();
+    desafectarGuardarropa();
 }
