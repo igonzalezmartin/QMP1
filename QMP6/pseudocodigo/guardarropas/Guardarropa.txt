@@ -30,21 +30,18 @@ class Guardarropa{
     getPropuestas(){return this.propuestas}
 
     aceptarPropuesta(propuesta){
-        if(!propuestas.contains(propuesta)) throw new PropuestaNotExists();
         removePropuesta(propuesta);
         propuestasAceptadas.add(propuesta);
         propuesta.aceptar(); 
     }
 
     deshacerPropuesta(propuesta){
-        if(!propuestasAceptadas.contains(propuesta)) throw new PropuestaNotExists();
         propuestasAceptadas.remove(propuesta);
         addPropuesta(propuesta);
         propuesta.deshacer();
     }
 
     rechazarPropuesta(propuesta){
-        if(!propuestas.contains(propuesta)) throw new PropuestaNotExists();
         removePropuesta(propuestas);
     }
 }
