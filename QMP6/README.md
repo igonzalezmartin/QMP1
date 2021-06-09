@@ -1,2 +1,2 @@
 # To do
-- Actualizar diagrama
+![Diagrama](/QMP6/diagrama.png)
