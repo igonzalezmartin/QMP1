@@ -1,0 +1,14 @@
+class User{
+    list guardarropas
+    list acciones
+    list sugerencias
+    var email
+
+    compartirGuardarropa(guardarropa){
+        guardarropas.add(guardarropa);
+    }
+
+    avisarAlertas(alertas){
+        acciones.forEach(accion -> accion.ejecutar(alertas));
+    }
+}

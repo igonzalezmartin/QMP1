@@ -1,0 +1,26 @@
+class SugerenciasManager{
+  var sugerenciaDiaria
+  list alertas;
+
+  _instance
+  instance(){
+    if (!_instance)
+      _instance = new RepositorioAtuendos();
+    return _instance;
+  }
+
+  calcularSugerenciaDiaria(){
+    //calcular (no se definio como)
+  }
+  actualizarSugerenciaDiaria(){
+    this.sugerenciaDiaria = calcularSugerenciaDiaria();
+  }
+
+  actualizarAlertas(){
+    this.alertas = ClimaManager.instance().getAlertas();
+  }
+  avisarAlertas(){
+    usuarios = RepositorioUsuarios.instance().getUsuarios();
+    usuarios.forEach(u -> u.avisarAlertas(alertas));
+  }
+}

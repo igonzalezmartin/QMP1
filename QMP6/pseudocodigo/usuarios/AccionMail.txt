@@ -1,0 +1,6 @@
+class AccionMail implements Accion{
+    ejecutar(alertas, email){
+        mensajeAlerta = alertas.reduce((acc,alerta) -> acc + alerta + ", ");
+        MailSender.send(email, "Alertas: " + mensajeAlerta)
+    }
+}

@@ -1,0 +1,6 @@
+class RepositorioUsuarios{
+    usuarios
+    getUsuarios(){
+        return usuarios;
+    }
+}

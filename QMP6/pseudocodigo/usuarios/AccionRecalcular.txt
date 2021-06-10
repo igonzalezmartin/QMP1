@@ -1,0 +1,5 @@
+class AccionRecalcular implements Accion{
+    ejecutar(alertas, email){
+        //no se
+    }
+}

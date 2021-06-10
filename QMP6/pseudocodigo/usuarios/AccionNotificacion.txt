@@ -1,0 +1,8 @@
+class AccionNotificacion implements Accion {
+    ejecutar(alertas, email){
+        if(alertas.contains("STORM"))
+            NotificationService.notify("Hay tormenta, no te olvides de tu paraguas!");
+        if(alertas.contains("HAIL"))
+            NotificationService.notify("Hay granizo, no saques el auto!");
+    }
+}
